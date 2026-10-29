@@ -12,9 +12,9 @@ source-backed reports with confidence levels and limitations.
 > *Includes end-to-end execution logs, tool queries (arXiv + Tavily), evidence curation, claim verifications, and structured JSON/markdown reports.*
 
 > [!TIP]
-## Evaluation Metrics
+> ## Evaluation Metrics
 
-The recorded evaluation includes completed research runs where relevance and citation support were manually audited against evidence snippets.
+ The recorded evaluation includes completed research runs where relevance and citation support were manually audited against evidence snippets.
 
 | Metric | Current Result | Interpretation |
 | :--- | :--- | :--- |
