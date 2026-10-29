@@ -13,7 +13,7 @@ source-backed reports with confidence levels and limitations.
 
 > [!TIP]
 > ## Evaluation Metrics
-
+>
 > The recorded evaluation includes completed research runs where relevance and citation support were manually audited against evidence snippets.
 
 | Metric | Current Result | Interpretation |
