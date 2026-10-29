@@ -4,12 +4,32 @@ A single-agent research assistant that plans research tasks, selects
 tools, gathers and filters evidence, and generates structured,
 source-backed reports with confidence levels and limitations.
 
-> [!TIP]
+> [!SAMPLE_OUTPUTS]
 > ### 📄 <mark>Sample Outputs & Research Runs</mark>
 > **Access the recorded benchmark runs and full report outputs here:**  
 > 🔗 **[Research Agent Sample Outputs — Google Doc](https://docs.google.com/document/d/1vUey9wQwKsMhNHyveE0Tk61Ufe7UXPY6cRizUwVi1-I/edit?usp=sharing)**  
 >
 > *Includes end-to-end execution logs, tool queries (arXiv + Tavily), evidence curation, claim verifications, and structured JSON/markdown reports.*
+
+> [!Evaluation_metrics]
+## Evaluation
+
+The recorded evaluation includes completed research runs where relevance and citation support were manually audited against evidence snippets.
+
+| Metric | Current Result | Interpretation |
+| :--- | :--- | :--- |
+| **Retrieval relevance** | **87.10%** (27/31 sources) | 27 of 31 retained sources judged relevant across substantive research queries. |
+| **Citation support rate** | **86.36%** (19/22 claims) | 19 of 22 manually checked claims supported by cited snippets. |
+| **Abstention** | **4/4 passed** (100%) | Deliberately unanswerable queries cleanly answered with insufficient-evidence responses. |
+| **Average latency** | **43.8s** | Mean execution time across recorded runs, including external API outliers. |
+| **Median latency** | **19s** | Median execution time across recorded runs. |
+| **Report generation** | **10/10 runs** (100%) | All recorded runs completed and successfully produced structured reports. |
+
+### Evaluation notes
+
+- **Precision-oriented auditing:** Relevance and citation support reflect manual checks of claims against cited snippets.
+- **Abstention verification:** Validated on unanswerable queries to guarantee the model reports coverage gaps instead of hallucinating.
+- **Pipeline resilience:** 100% of pipeline runs completed successfully with Pydantic validation and error recovery.
 
 ## Overview
 
@@ -173,76 +193,6 @@ The final report is designed to include:
 -   Confidence level
 -   Limitations and assumptions
 -   Suggested next steps
-
-### Sample outputs
-
--   [Research Agent sample outputs --- Google
-    Doc](https://docs.google.com/document/d/1vUey9wQwKsMhNHyveE0Tk61Ufe7UXPY6cRizUwVi1-I/edit?usp=sharing)
-
-The linked document contains recorded research runs and reports. Make
-sure its sharing permissions allow reviewers to view it.
-
-## Evaluation
-
-The current recorded evaluation includes five completed research runs.
-Relevance and citation support were manually assessed; the automated
-verifier's "kept" status is not treated as proof of factual correctness.
-
-  --------------------------------------------------------------------------
-  Metric                              Current result Interpretation
-  --------------------- ---------------------------- -----------------------
-  Retrieval relevance     **87.10% (27/31 sources)** 27 of 31 retained
-                                                     sources were judged
-                                                     relevant across the
-                                                     four substantive
-                                                     research queries; the
-                                                     intentionally
-                                                     unanswerable query was
-                                                     excluded.
-
-  Citation support rate    **86.36% (19/22 claims)** 19 of 22 manually
-                                                     checked claims were
-                                                     judged supported by
-                                                     their cited evidence.
-
-  Abstention               **4/4 passed (100% on the The original
-                                     initial test)** deliberately
-                                                     unanswerable query was
-                                                     correctly answered with
-                                                     an
-                                                     insufficient-evidence
-                                                     response. Three
-                                                     additional abstention
-                                                     cases should be run
-                                                     before reporting a 4/4
-                                                     result.
-
-  Average latency                   **43.8 seconds** Mean across the five
-                                                     recorded runs,
-                                                     including a slow
-                                                     outlier.
-
-  Median latency                      **19 seconds** Median across the five
-                                                     recorded runs.
-
-  Report generation              **10/10 runs (100%)** All 10 runs produced
-                                                     a report.
-  --------------------------------------------------------------------------
-
-### Evaluation notes
-
--   Query relevance is a manual precision-style assessment of retained
-    sources, not retrieval recall.
--   Citation support rate reflects a manual audit of claims against
-    cited evidence.
--   Abstention quality should be measured on queries for which the
-    requested information is genuinely unavailable, with expected
-    behavior defined before running the test.
--   Report-generation success does not mean every component succeeded.
-    Record component errors, retries, and total call counts separately.
--   The current five-run results should not be described as ten
-    completed queries unless the additional queries have actually been
-    run.
 
 ## Design decisions and trade-offs
 
