@@ -4,15 +4,15 @@ A single-agent research assistant that plans research tasks, selects
 tools, gathers and filters evidence, and generates structured,
 source-backed reports with confidence levels and limitations.
 
-> [!SAMPLE_OUTPUTS]
+> [!TIP]
 > ### 📄 <mark>Sample Outputs & Research Runs</mark>
 > **Access the recorded benchmark runs and full report outputs here:**  
 > 🔗 **[Research Agent Sample Outputs — Google Doc](https://docs.google.com/document/d/1vUey9wQwKsMhNHyveE0Tk61Ufe7UXPY6cRizUwVi1-I/edit?usp=sharing)**  
 >
 > *Includes end-to-end execution logs, tool queries (arXiv + Tavily), evidence curation, claim verifications, and structured JSON/markdown reports.*
 
-> [!Evaluation_metrics]
-## Evaluation
+> [!TIP]
+## Evaluation Metrics
 
 The recorded evaluation includes completed research runs where relevance and citation support were manually audited against evidence snippets.
 
