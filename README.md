@@ -2,7 +2,7 @@
 
 AI research assistant that plans research tasks, selects
 tools, gathers and filters evidence, and generates structured,
-source-backed reports with confidence levels and limitations.
+source-backed reports with confidence levels.
 
 > [!TIP]
 > ### 📄 <mark>Sample Outputs & Research Runs</mark>
