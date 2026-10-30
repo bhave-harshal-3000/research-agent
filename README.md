@@ -1,6 +1,6 @@
 # WSearch — AI Research Agent
 
-A single-agent research assistant that plans research tasks, selects
+AI research assistant that plans research tasks, selects
 tools, gathers and filters evidence, and generates structured,
 source-backed reports with confidence levels and limitations.
 
